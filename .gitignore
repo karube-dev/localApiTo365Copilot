@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+
+# environment config
+.env
+
+# persistent browser session directory
+.browser-session/
+
+# editor artefacts
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS artefacts
+.DS_Store
+Thumbs.db
