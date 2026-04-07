@@ -134,7 +134,10 @@ router.post("/", async (req: Request, res: Response): Promise<void> => {
       },
     ],
     usage: {
-      // Exact token counts are not available; provide rough estimates.
+      // NOTE: Exact token counts are not available from the browser UI.
+      // These are rough estimates (≈4 characters per token) provided for
+      // API compatibility only.  Do not rely on them for billing or rate-limit
+      // calculations.
       prompt_tokens: Math.ceil(prompt.length / 4),
       completion_tokens: Math.ceil(assistantReply.length / 4),
       total_tokens: Math.ceil((prompt.length + assistantReply.length) / 4),

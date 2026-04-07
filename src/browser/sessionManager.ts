@@ -10,7 +10,7 @@
  *   const page    = await manager.getPage();
  */
 
-import { Browser, BrowserContext, Page, chromium } from "playwright";
+import { BrowserContext, Page, chromium } from "playwright";
 import path from "path";
 
 const USER_DATA_DIR = process.env["BROWSER_USER_DATA_DIR"]
@@ -22,7 +22,6 @@ const HEADLESS = process.env["BROWSER_HEADLESS"] !== "false";
 export class BrowserSessionManager {
   private static instance: BrowserSessionManager;
 
-  private browser: Browser | null = null;
   private context: BrowserContext | null = null;
   private page: Page | null = null;
 
@@ -69,7 +68,6 @@ export class BrowserSessionManager {
       console.log("[browser] Context closed");
       this.context = null;
       this.page = null;
-      this.browser = null;
     });
 
     this.page.on("close", () => {
@@ -85,13 +83,10 @@ export class BrowserSessionManager {
     try {
       if (this.context) {
         await this.context.close();
-      } else if (this.browser) {
-        await this.browser.close();
       }
     } finally {
       this.context = null;
       this.page = null;
-      this.browser = null;
     }
   }
 }
