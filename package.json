@@ -1,0 +1,37 @@
+{
+  "name": "localapito365copilot",
+  "version": "1.0.0",
+  "description": "Local OpenAI-compatible API proxy for Microsoft 365 Copilot Chat via Playwright",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "test": "echo \"No automated tests configured\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karube-dev/localApiTo365Copilot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/karube-dev/localApiTo365Copilot/issues"
+  },
+  "homepage": "https://github.com/karube-dev/localApiTo365Copilot#readme",
+  "dependencies": {
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.5.2",
+    "@types/uuid": "^10.0.0",
+    "playwright": "^1.59.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.2"
+  }
+}
